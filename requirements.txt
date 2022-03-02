@@ -1,0 +1,5 @@
+Flask==2.0.3
+starkbank==2.15.0
+python-decouple==3.6
+schedule==1.1.0
+Faker==13.2.0
