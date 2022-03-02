@@ -60,16 +60,16 @@ def run_a_schedule():
 
 
 def scheduler():
-    end = datetime.now() + timedelta(hours=24) # tempo de agora mais o total do tempo dos ciclos
-    logging.info('Started invoice scheduler') # mensagem
+    end = datetime.now() + timedelta(hours=24)
+    logging.info('Started invoice scheduler')
 
-    while datetime.now() < end: # enquanto a hora de agora é menor que o tempo taotal dos ciclos
-        logging.info('Started new cycle') # mensagem
-        run_a_schedule() # chama a funcao para criar as invoices
+    while datetime.now() < end:
+        logging.info('Started new cycle')
+        run_a_schedule()
     
-    logging.info('End') # terminando as mensagens
+    logging.info('End')
 
 
 if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
-    scheduler() # chama a funcao do tempo total de 24 horas, e dentro dela tem a funcao que cria as invoices
+    scheduler()
