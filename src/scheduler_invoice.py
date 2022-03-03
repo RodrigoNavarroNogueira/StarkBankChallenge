@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from time import sleep, time
 from random import randint
-from src.scheduler_invoice import create_invoice
+from src.invoice.create_invoice import create_invoice
 import logging
 
 
