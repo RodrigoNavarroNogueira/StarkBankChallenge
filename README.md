@@ -20,7 +20,7 @@ git remote set-url origin git@github.com:RodrigoNavarroNogueira/StarkBankChallen
 
 Into a virtualenv install the dependencies:
 ```sh
-pip install -r requirements/dev.txt
+pip install -r requirements.txt
 ```
 
 Create the .env based on .env.sample:
