@@ -24,7 +24,7 @@ def transfer_schedule(db_name, status):
         logging.info(
             f'''Transfer performed successfully!
         Transfer info: {do_transfer(invoice)}
-        Transferred at {datetime.now()[:17]}'''
+        Transferred at {datetime.now()}'''
         )
         insert_invoice(TRANSFER_DB, str(invoice))
 
