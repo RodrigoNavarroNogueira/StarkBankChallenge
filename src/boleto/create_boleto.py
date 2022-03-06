@@ -1,4 +1,5 @@
 from datetime import datetime
+import logging
 
 import starkbank
 
@@ -6,9 +7,11 @@ from src.authentication import user
 
 starkbank.user = user
 
-boletos = starkbank.boleto.create([
+logging.getLogger().setLevel(logging.INFO)
+
+boleto = starkbank.boleto.create([
     starkbank.Boleto(
-        amount=10000000,
+        amount=200,
         due=datetime.now(),
         name="Iron Bank S.A.",
         tax_id="20.018.183/0001-80",
@@ -25,5 +28,5 @@ boletos = starkbank.boleto.create([
     )
 ])
 
-for boleto in boletos:
-    print(boleto)
+
+logging.info(f'Boleto was issued!\n{boleto[0]}')
