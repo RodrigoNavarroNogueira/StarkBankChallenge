@@ -1,3 +1,5 @@
+import logging
+
 import starkbank
 
 from src.authentication import user
@@ -5,7 +7,8 @@ from src.utils.constants import INVOICE_ID
 
 starkbank.user = user
 
-id_invoice = INVOICE_ID
-invoice = starkbank.invoice.get(id_invoice)
+logging.getLogger().setLevel(logging.INFO)
 
-print(invoice)
+invoice = starkbank.invoice.get(INVOICE_ID)
+
+logging.info(f'Consulting the invoice...\n{invoice}')
