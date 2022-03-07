@@ -22,4 +22,4 @@ def transfer(amount):
 
 
 if __name__ == '__main__':
-    transfer(100)
+    transfer(200)
