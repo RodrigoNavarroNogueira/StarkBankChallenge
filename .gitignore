@@ -134,4 +134,6 @@ dmypy.json
 # keys
 *.pem
 
+# others
 .env
+.vscode/
