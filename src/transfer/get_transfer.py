@@ -1,9 +1,14 @@
+import logging
+
 import starkbank
 
 from src.authentication import user
+from src.utils.constants import TRANSFER_ID
 
 starkbank.user = user
 
-transfer = starkbank.transfer.get("4659866144604160")
+logging.getLogger().setLevel(logging.INFO)
 
-print(transfer)
+transfer = starkbank.transfer.get(TRANSFER_ID)
+
+logging.info(f'Looking for transfer with ID Transfer number...\n{transfer}')
