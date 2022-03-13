@@ -17,7 +17,11 @@ class AbstractEngine:
 
     @abstractmethod
     def read(self, query):
-        pass
+        ...
+
+    @abstractmethod
+    def update(self, id):
+        ...
 
     @abstractmethod
     def delete(self, id):
@@ -25,4 +29,4 @@ class AbstractEngine:
 
     @abstractmethod
     def insert(self, query):
-        pass
+        ...
