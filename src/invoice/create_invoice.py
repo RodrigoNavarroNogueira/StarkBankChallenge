@@ -1,16 +1,9 @@
 from datetime import datetime, timedelta
 
 import starkbank
-import sqlite3
 
 from src.authentication import user
 from src.invoice.data_invoice_generator import random_amount, random_name, cpf
-
-starkbank.user = user
-
-base = sqlite3.connect('invoices.db')
-
-cursor = base.cursor()
 
 
 def create_invoice():
@@ -28,8 +21,7 @@ def create_invoice():
             tax_id=cpf()
         )
     ])
-    cursor.execute(f"INSERT INTO invoices VALUES ('{invoices[0].status}', {invoices[0].id}, '{invoices[0].tax_id}', '{invoices[0].name}', {invoices[0].amount}, '{str(invoices[0].created)[:19]}')")
-    base.commit()
     return invoices
 
-create_invoice()
+
+starkbank.user = user
