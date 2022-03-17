@@ -9,24 +9,22 @@ class AbstractEngine:
         self.database = sqlite3.connect(f'{database_name}.db')
         self.cursor = self.database.cursor()
 
-        self.create()
 
     @abstractmethod
     def create(self):
         ...
 
+
     @abstractmethod
     def read(self, query):
         ...
+
 
     @abstractmethod
     def update(self, id):
         ...
 
-    @abstractmethod
-    def delete(self, id):
-        ...
 
     @abstractmethod
-    def insert(self, query):
+    def delete(self, id):
         ...
